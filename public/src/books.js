@@ -1,5 +1,3 @@
-const { findAccountById } = require("./accounts");
-
 function findAuthorById(authors, id) {
   return authors.find((author) => author.id == id);
 }

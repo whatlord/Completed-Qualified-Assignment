@@ -1,5 +1,3 @@
-const { partitionBooksByBorrowedStatus } = require("./books");
-
 function getTotalBooksCount(books) {
   return books.length;
 }
@@ -9,8 +7,8 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
-  let borrows = partitionBooksByBorrowedStatus(books)
-  return borrows[0].length
+  let borrowed = books.filter((book) => !book.borrows[0].returned)
+  return borrowed.length
 }
 
 function getMostCommonGenres(books) {
